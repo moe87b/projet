@@ -41,7 +41,7 @@ public class SalleController extends AbstractController<Salle> {
 			}
 			if (s.getNom().equalsIgnoreCase(t.getNom()) && s.getCampus() != t.getCampus()) {
 				int reponse = JOptionPane.showConfirmDialog(null,
-						"Ce nom de salle est déjà utilisé dans d'autres centres, et" + " peut prêter"
+						"Ce nom de salle est déjà utilisé dans d'autres centres, et peut prêter"
 								+ " à confusion. Ajouter quand-même ?",
 						"Attention", JOptionPane.YES_NO_OPTION);
 				if (reponse == JOptionPane.NO_OPTION)

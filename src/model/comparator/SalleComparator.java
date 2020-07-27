@@ -4,6 +4,11 @@ import java.util.Comparator;
 
 import model.Salle;
 
+/**
+ * Comparer deux salles de classes selon leur capacité
+ * 
+ *
+ */
 public class SalleComparator implements Comparator<Salle> {
 
 	@Override

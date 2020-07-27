@@ -14,15 +14,31 @@ import model.enums.Campus;
 import model.horraires.EmploiDuTemps;
 import model.horraires.Seance;
 
+/**
+ * Classe contenant une collection des objets association créés
+ * 
+ *
+ */
 public class AssociationData extends DataModel<Association> implements Observer {
+	/**
+	 * Une liste des salles disponibles.
+	 */
 	private ArrayList<Salle> listeSalles = new ArrayList<Salle>();
 
+	/**
+	 * Le constructeur
+	 * 
+	 * @param dataFile le fichier de données
+	 */
 	public AssociationData(File dataFile) {
 		super(dataFile);
 		updateCompteur();
 
 	}
 
+	/**
+	 * Mettre à jour le compteur après la lecture des fichiers
+	 */
 	private void updateCompteur() {
 		int max = 0;
 		for (Integer i : dataMap.keySet()) {
@@ -34,6 +50,9 @@ public class AssociationData extends DataModel<Association> implements Observer 
 		Association.updateCompteur(max);
 	}
 
+	/**
+	 * Mise à jour selon les objets observés
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 
@@ -66,10 +85,13 @@ public class AssociationData extends DataModel<Association> implements Observer 
 		return listeSalles;
 	}
 
-	public ArrayList<Salle> getListeSallesParCentre(int minimumSize, Campus c) // retourne la liste des salles qui ont
-																				// au moins la
-	// capacité demandée
-	{
+	/**
+	 * 
+	 * @param minimumSize capacité des salles
+	 * @param c           le campus concerné
+	 * @return une liste des salles du campus qui ont la capacité demandée
+	 */
+	public ArrayList<Salle> getListeSallesParCentre(int minimumSize, Campus c) {
 		ArrayList<Salle> listeReduite = new ArrayList<Salle>();
 		for (Salle s : listeSalles) {
 			if (s.getCapacite() >= minimumSize && s.getCampus().equals(c))
@@ -80,17 +102,9 @@ public class AssociationData extends DataModel<Association> implements Observer 
 
 	}
 
-	/*
-	 * public void afficher() { for (Association s : dataMap.values()) {
-	 * System.out.println(s); }
-	 * 
-	 * }
-	 */
-
 	@Override
 	public void add(Association a) {
 		super.add(a);
-		// afficher();
 
 	}
 

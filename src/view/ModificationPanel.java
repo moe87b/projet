@@ -162,6 +162,8 @@ public class ModificationPanel extends AbstractView<Association> {
 					seance.getMap().put(a, nouvelle);
 					EmploiDuTemps.ecrire();
 					modificationData.update();
+					JOptionPane.showMessageDialog(null, "Salle modifiée", "Salle modifiée",
+							JOptionPane.INFORMATION_MESSAGE);
 				}
 
 			}

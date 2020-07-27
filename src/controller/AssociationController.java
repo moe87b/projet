@@ -35,7 +35,7 @@ public class AssociationController extends AbstractController<Association> {
 		HashMap<Association, Salle> hash = new HashMap<>();
 		if (!verifierMemeJoursDeuxCentres(t.getEnseignant(), listeSeances, t)) {
 			JOptionPane.showMessageDialog(null,
-					"Le même prof ne peut pas avoir deux cours consécutifs dans deux centres différents", "Erreur",
+					"Le même prof ne peut pas avoir deux cours la même journée dans deux centres différents", "Erreur",
 					JOptionPane.ERROR_MESSAGE);
 			return false;
 		}

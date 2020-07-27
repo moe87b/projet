@@ -48,6 +48,7 @@ public class Fenetre extends JFrame {
 	private JMenu fichiers = new JMenu("Fichier");
 	private JMenuItem workspace = new JMenuItem("Workspace");
 	private JMenu outils = new JMenu("Outils");
+	private JMenuItem annuler = new JMenuItem("Annuler");
 	private JMenuItem restaurer = new JMenuItem("Restaurer");
 	private TitledBorder border = BorderFactory.createTitledBorder("Workspace: Default");
 	// private FinalPanel finalPan
@@ -61,6 +62,7 @@ public class Fenetre extends JFrame {
 		menuBar.add(fichiers);
 		menuBar.add(outils);
 		outils.add(restaurer);
+		outils.add(annuler);
 		setJMenuBar(menuBar);
 
 		border.setTitleJustification(TitledBorder.CENTER);
@@ -208,6 +210,17 @@ public class Fenetre extends JFrame {
 				AssociationData associationData = (AssociationData) Fenetre.this.getAssociationPanel().getController()
 						.getData();
 				associationData.reset();
+
+			}
+		});
+
+		annuler.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				String selectedPane = panes.getTitleAt(panes.getSelectedIndex());
+				System.out.println(selectedPane);
 
 			}
 		});

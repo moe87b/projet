@@ -127,49 +127,6 @@ public class ClassePanel extends AbstractView<Classe> {
 
 	}
 
-	/*
-	 * private void updateNombreDePlaces(ArrayList<Salle> listeSalles) {
-	 * 
-	 * int beyrouth = 0; int tripoli = 0; int baalbak = 0; int bikfaya = 0; int
-	 * nahrIbrahim = 0;
-	 * 
-	 * for (Salle s : listeSalles) { if (s.getCampus() == Campus.BEYROUTH) beyrouth
-	 * += s.getCapacite();
-	 * 
-	 * if (s.getCampus() == Campus.TRIPOLI) tripoli += s.getCapacite();
-	 * 
-	 * if (s.getCampus() == Campus.BICKFAYA) bikfaya += s.getCapacite();
-	 * 
-	 * if (s.getCampus() == Campus.BAALBECK) baalbak += s.getCapacite();
-	 * 
-	 * if (s.getCampus() == Campus.NAHR_IBRAHIM) nahrIbrahim += s.getCapacite();
-	 * 
-	 * }
-	 * 
-	 * for (Classe c : this.controller.getValues()) { if (c.getMatiere().getCampus()
-	 * == Campus.BEYROUTH) beyrouth -= c.getInscriptions();
-	 * 
-	 * if (c.getMatiere().getCampus() == Campus.TRIPOLI) tripoli -=
-	 * c.getInscriptions();
-	 * 
-	 * if (c.getMatiere().getCampus() == Campus.BAALBECK) baalbak -=
-	 * c.getInscriptions();
-	 * 
-	 * if (c.getMatiere().getCampus() == Campus.BICKFAYA) bikfaya -=
-	 * c.getInscriptions();
-	 * 
-	 * if (c.getMatiere().getCampus() == Campus.NAHR_IBRAHIM) nahrIbrahim -=
-	 * c.getInscriptions();
-	 * 
-	 * }
-	 * 
-	 * beyrouthValue.setText(String.valueOf(beyrouth));
-	 * nahrValue.setText(String.valueOf(nahrIbrahim));
-	 * blbValue.setText(String.valueOf(baalbak));
-	 * tripoliValue.setText(String.valueOf(tripoli));
-	 * bikFayaValue.setText(String.valueOf(bikfaya)); }
-	 */
-
 	@Override
 	public void addListeners() {
 		ajouter.addActionListener(new ActionListener() {

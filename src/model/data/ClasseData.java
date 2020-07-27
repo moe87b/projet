@@ -10,16 +10,38 @@ import model.Classe;
 import model.Matiere;
 import model.Salle;
 
+/**
+ * 
+ * Salle contenant une collection des différentes salles de classe
+ * 
+ */
 public class ClasseData extends DataModel<Classe> implements Observer {
 
+	/**
+	 * Liste de matières afin de savoir quelles sont les matières disponibles lors
+	 * de la création d'une classe
+	 */
 	private ArrayList<Matiere> listeMatieres = new ArrayList<Matiere>();
+	/**
+	 * Liste de salles afin de savoir quelles sont les capacités des salles lors de
+	 * la création d'une classe
+	 */
 	private ArrayList<Salle> listeSalles = new ArrayList<Salle>();
 
+	/**
+	 * Le constructeur
+	 * 
+	 * @param dataFile fichier de données
+	 */
 	public ClasseData(File dataFile) {
 		super(dataFile);
 		updateCompteur();
 	}
 
+	/**
+	 * Mettre à jour le compteur lors de la lecture, pour ne pas qu'il se
+	 * réinitialise à chaque éxécution du programme
+	 */
 	private void updateCompteur() {
 		int max = 0;
 		for (Integer i : this.dataMap.keySet()) {
@@ -30,6 +52,10 @@ public class ClasseData extends DataModel<Classe> implements Observer {
 		Classe.setCompteur(max);
 	}
 
+	/**
+	 * Mise à jour des informations que sont la liste des salles et des matières à
+	 * travers observer
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		if (arg0 instanceof MatiereData) {
@@ -66,10 +92,17 @@ public class ClasseData extends DataModel<Classe> implements Observer {
 
 	}
 
+	/**
+	 * 
+	 * @return la liste des matières
+	 */
 	public Collection<Matiere> getListeMatieres() {
 		return listeMatieres;
 	}
 
+	/**
+	 * Vérifie si la classe figure dans la liste
+	 */
 	@Override
 	public boolean contains(Classe c) {
 
@@ -82,6 +115,10 @@ public class ClasseData extends DataModel<Classe> implements Observer {
 		return false;
 	}
 
+	/**
+	 * 
+	 * @return la liste des salles
+	 */
 	public ArrayList<Salle> getListeSalles() {
 		return listeSalles;
 	}
