@@ -126,6 +126,15 @@ public class EmploiDuTemps extends Observable implements Serializable {
 			s.getSalles().clear();
 			s.getEnseignants().clear();
 			s.getMap().clear();
+
+		}
+
+		file.delete();
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
