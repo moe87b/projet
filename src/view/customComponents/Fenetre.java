@@ -211,6 +211,13 @@ public class Fenetre extends JFrame {
 
 				EmploiDuTemps.reset();
 				affichagePanel.updateAffichage();
+				
+				sallePanel.getNouvelleSaisie().doClick();
+				matierePanel.getNouvelleSaisie().doClick();
+				enseignantPanel.getNouvelleSaisie().doClick();
+				classePanel.getNouvelleSaisie().doClick();
+				
+				
 
 			}
 		});

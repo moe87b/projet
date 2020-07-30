@@ -131,10 +131,15 @@ public class AssociationController extends AbstractController<Association> {
 				Seance[] verfication = { new Seance(demande.getJour(), HeuresEnum.HEURE2),
 						new Seance(demande.getJour(), HeuresEnum.HEURE3) };
 				for (Seance ver : verfication) {
-					for (Enseignant ens : EmploiDuTemps.getInstance().getSeance(ver).getEnseignants()) {
+					/*for (Enseignant ens : EmploiDuTemps.getInstance().getSeance(ver).getEnseignants()) {
 						if (ens.equals(e)) {
 							return false;
 						}
+					}*/
+					for(Association asso :  EmploiDuTemps.getInstance().getSeance(ver).getAssociationCoursProf())
+					{
+						if(asso.getClasse().getMatiere().getCampus() != as.getClasse().getMatiere().getCampus()
+								&& asso.getEnseignant().equals(e)) return false;
 					}
 
 				}
@@ -144,10 +149,16 @@ public class AssociationController extends AbstractController<Association> {
 				Seance[] verfication = { new Seance(demande.getJour(), HeuresEnum.HEURE1),
 						new Seance(demande.getJour(), HeuresEnum.HEURE3) };
 				for (Seance ver : verfication) {
-					for (Enseignant ens : EmploiDuTemps.getInstance().getSeance(ver).getEnseignants()) {
+					/*for (Enseignant ens : EmploiDuTemps.getInstance().getSeance(ver).getEnseignants()) {
 						if (ens.equals(e)) {
 							return false;
 						}
+					}*/
+					
+					for(Association asso :  EmploiDuTemps.getInstance().getSeance(ver).getAssociationCoursProf())
+					{
+						if(asso.getClasse().getMatiere().getCampus() != as.getClasse().getMatiere().getCampus()
+								&& asso.getEnseignant().equals(e)) return false;
 					}
 
 				}
@@ -156,10 +167,16 @@ public class AssociationController extends AbstractController<Association> {
 				Seance[] verfication = { new Seance(demande.getJour(), HeuresEnum.HEURE1),
 						new Seance(demande.getJour(), HeuresEnum.HEURE2) };
 				for (Seance ver : verfication) {
-					for (Enseignant ens : EmploiDuTemps.getInstance().getSeance(ver).getEnseignants()) {
+					/*for (Enseignant ens : EmploiDuTemps.getInstance().getSeance(ver).getEnseignants()) {
 						if (ens.equals(e)) {
 							return false;
 						}
+					}*/
+					
+					for(Association asso :  EmploiDuTemps.getInstance().getSeance(ver).getAssociationCoursProf())
+					{
+						if(asso.getClasse().getMatiere().getCampus() != as.getClasse().getMatiere().getCampus()
+								&& asso.getEnseignant().equals(e)) return false;
 					}
 
 				}

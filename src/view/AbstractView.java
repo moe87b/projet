@@ -64,5 +64,9 @@ public abstract class AbstractView<T extends Model> implements Observer {
 	public AbstractController<T> getController() {
 		return controller;
 	}
+	
+	public JButton getNouvelleSaisie() {
+		return nouvelleSaisie;
+	}
 
 }

@@ -136,6 +136,8 @@ public class EmploiDuTemps extends Observable implements Serializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		ecrire();
 	}
 
 	/**
